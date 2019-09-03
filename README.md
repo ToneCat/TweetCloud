@@ -1,10 +1,10 @@
-# final-project-catalfamo-sheil-padonou
-final-project-catalfamo-sheil-padonou created by GitHub Classroom
+# TweetCloud
 
-## Group Members:
-Tony Catalfamo
-Thomas Sheil
-Jean Podonoli
+## Made with Angular and Material design for Angular (uses Twitter API)
+
+## This tool provides the functionality to scan recent tweets for a user specified keyword and display the words most used in conjunction with that keyword in table and cloud format. (Also provides the number of times these words are used in conjunction)
+
+## This tool also provides the functionality to search for a username or Twitter handle and display the words this account or person uses the most based on their recent tweets.
 
 ##How To Run 
 
