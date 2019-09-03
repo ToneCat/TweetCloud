@@ -1,0 +1,187 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+@font-face {
+    font-family: helvetica;
+    src: url(assets/font/f.otf) format("opentype");
+  }
+
+  #logotext{
+    color: #FFFFFF;
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0 #007FFF, 2px -2px 0 #007FFF, -2px 2px 0 #007FFF, -2px -2px 0 #007FFF, 2px 0px 0 #007FFF, 0px 2px 0 #4074b5, -2px 0px 0 #007FFF, 0px -2px 0 #007FFF;
+    color: #FFFFFF;
+    background: #FFFFFF;
+    border-radius: 10px;
+  }
+  #menubutton{
+      margin-left: 25px;
+      color: #333;
+      font-size: 14px;
+  }
+  #menubutton2{
+    font-size: 14px;
+   
+}
+
+
+
+html{
+background: linear-gradient(180deg, rgba(0,127,255,1) 0%, rgba(0,196,255,1) 100%);
+min-height: 100%;
+font-family: 'helvetica';
+
+}
+body{
+    margin:0px;
+}
+
+.mat-toolbar{
+    background-color: white;
+    width: 100%;
+    -webkit-box-shadow: 0 1px 1px -6px #333;
+    -moz-box-shadow: 0 1px 1px -6px #333;
+    box-shadow: 0 1px 1px -6px #333;
+    
+    
+    
+}
+
+#userimage{
+    border-radius: 50%;
+    padding-right: 5px;
+}
+
+.mat-focused .mat-form-field-label {
+    color: rgba(0,127,255,1)!important;
+}
+.mat-form-field-ripple {
+    background-color: rgba(0,196,255,1) !important;
+}
+#loading{
+    color: #333;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+    margin-left:230px;
+    
+}
+.box {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-top: 3%;
+ }
+
+#displaycard{
+    width:500px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+#displaycard2{
+    width:500px;
+    margin-left: auto;
+    margin-right: auto;
+   margin-bottom: 150px;
+    max-height: 425px;
+
+}
+
+
+.searchinput{
+    width: 100%;
+}
+
+.headertext2{
+    font-size: 30px;
+  color: white;
+text-align: center;
+margin-top: 2%;
+
+}
+.headertext{
+    font-size: 30px;
+  color: white;
+
+
+
+}
+
+.subheader{
+font-size: 20px;
+color: white;
+text-align: center;
+margin-bottom: 20px;
+overflow-wrap: break-word;
+width: 75%;
+margin-left: auto;
+margin-right:auto;
+margin-top:2%;
+
+}
+
+#searchbutton{
+    float:right;
+    margin-top: -17%;
+    font-size:35px;
+    color: #333;
+
+}
+table.mat-table{
+
+	
+	 -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 500px;
+    min-width: 500px;
+    max-width: 500px;
+
+ 
+}
+#container{
+    border-radius:5px;
+    margin-left: auto;
+    margin-right: auto;
+    height:400px;
+    max-height: 400px;
+    overflow: auto;
+
+    
+
+   
+    
+
+}
+
+
+.logo{
+    width:25%;
+margin-top:-9%;
+max-width:25%;
+
+}
+.logo2{
+    width:25%;
+margin-top:-9%;
+float:right;
+transform: scale(-1, 1);
+max-width:25%;
+
+}
+.smalltext{
+    font-size: 10px;
+    text-align: right;
+
+}
+.logosmall{
+    width: 5%;
+    vertical-align: middle;
+
+}
+
+

@@ -1,0 +1,21 @@
+
+<div class="headertext2">Twitter Keyword Relevancy</div>
+<div class="subheader">Enter a keyword in the field below and find out which words are most used in conjunction with that word within people's tweets</div>
+
+
+<mat-card id="displaycard">
+<form class="keyword">
+    <mat-form-field class="searchinput">
+      <input #keyword matInput placeholder="Keyword" value="Sushi">
+
+    </mat-form-field>
+    <div class="smalltext">Powered by <img class="logosmall" src="assets/tiw.png"></div>
+
+    <button mat-icon-button id="searchbutton" routerLink="/keywords/{{keyword.value}}">
+   <mat-icon>search</mat-icon>
+   </button>
+  </form>
+
+</mat-card>
+<img class="logo" src="assets/tiw.png">
+<img class="logo2" src="assets/tiw.png">

@@ -1,0 +1,56 @@
+<div class="box">
+  <img src="https://res.cloudinary.com/demo/image/twitter_name/w_100/{{word}}.jpg" id="userimage" height="42" width="42">
+  <div class="headertext">{{ word }}</div>
+</div>
+
+<br>
+<div>
+  <angular-tag-cloud
+    [data]="data"
+    [width]="options.width"
+    [height]="options.height"
+    style="
+    margin-left: auto;
+    margin-right: auto;">
+  </angular-tag-cloud>
+</div>
+<br>
+
+<div class="subheader">Here's a ranked list of words most used by @{{word}}</div>
+
+<mat-card id="displaycard2">
+    <mat-spinner id="loading"></mat-spinner>
+
+
+<div id = "container">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+
+
+    <ng-container matColumnDef="text">
+        <th mat-header-cell *matHeaderCellDef> Word </th>
+        <td mat-cell *matCellDef="let tasklist"> {{tasklist.text}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Count</th>
+        <td mat-cell *matCellDef="let tasklist"> {{tasklist.weight}} </td>
+      </ng-container>
+
+      
+    
+     
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+    
+    
+           </table>
+           </div>
+           <div class="smalltext">Powered by <img class="logosmall" src="assets/tiw.png"></div>
+           </mat-card>
+           
+
+    

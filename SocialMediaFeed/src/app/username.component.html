@@ -1,0 +1,21 @@
+
+<div class="headertext2">Twitter Username Search</div>
+<div class="subheader">Enter a username in the field below and find out which words are most used by that person in their tweets!</div>
+
+
+<mat-card id="displaycard">
+<form class="keyword">
+    <mat-form-field class="searchinput">
+      <input #keyword matInput placeholder="Twitter Handle" value="Twitter">
+
+    </mat-form-field>
+    <div class="smalltext">Powered by <img class="logosmall" src="assets/tiw.png"></div>
+
+    <button mat-icon-button id="searchbutton" routerLink="/user/{{keyword.value}}">
+   <mat-icon>search</mat-icon>
+   </button>
+  </form>
+
+</mat-card>
+<img class="logo" src="assets/tiw.png">
+<img class="logo2" src="assets/tiw.png">
