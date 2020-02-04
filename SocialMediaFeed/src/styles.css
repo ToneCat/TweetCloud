@@ -48,6 +48,7 @@ body{
     
 }
 
+
 #userimage{
     border-radius: 50%;
     padding-right: 5px;
@@ -60,12 +61,13 @@ body{
     background-color: rgba(0,196,255,1) !important;
 }
 #loading{
-    color: #333;
+   
+    color: rgba(0,196,255,1) !important;
     position: absolute;
     justify-content: center;
     align-items: center;
     margin-top: 110px;
-    margin-left:230px;
+    margin-left:200px;
     
 }
 .box {
@@ -149,13 +151,21 @@ table.mat-table{
     margin-right: auto;
     height:400px;
     max-height: 400px;
-    overflow: auto;
-
+    min-width: 500px;
+    max-width: 500px;
+    overflow-x:hidden;
+    overflow-y:scroll
     
 
    
     
 
+}
+
+td.mat-cell{
+max-width:400px;
+width:400px;
+min-width: 400px;
 }
 
 

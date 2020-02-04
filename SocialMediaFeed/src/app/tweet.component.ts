@@ -31,6 +31,7 @@ export class TweetComponent  {
 
   ngOnInit() {
     this.word = this.route.snapshot.paramMap.get('word');
+    document.getElementById('container').style.visibility = 'hidden';
     this.getKeywords(this.word);
   }
 
@@ -42,6 +43,9 @@ export class TweetComponent  {
 
         this.data = response.slice(0, 50);
         this.dataSource = response;
+        const elem = document.getElementById('loading');
+        elem.parentNode.removeChild(elem);
+        document.getElementById('container').style.visibility = 'visible';
         //console.log(this.data);
 
       })
