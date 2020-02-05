@@ -7,6 +7,7 @@ dotenv.config();
 const arrayfilter = require('arrayfilter');
 var cors = require('cors')
 
+
 app.use(cors())
 
 
@@ -43,12 +44,12 @@ app.get('/search/:keyword', (request, response) => {
     var arrayz;
     var inList = Boolean;
     var wordCounts = [];
-    var tweetStack = []
-
+    var tweetStack = [];
+    var last_id="";
 
     twitClient.get("search/tweets", {
         q: keyword,
-        count: 100
+        count: 200
     }).then(tweets1 => {
 
 
@@ -57,7 +58,7 @@ app.get('/search/:keyword', (request, response) => {
 
         twitClient.get("search/tweets", {
             q: keyword,
-            count: 100,
+            count: 200,
             max_id: last_id
         }).then(tweets2 => {
 
@@ -66,7 +67,7 @@ app.get('/search/:keyword', (request, response) => {
 
             twitClient.get("search/tweets", {
                 q: keyword,
-                count: 100,
+                count: 200,
                 max_id: last_id2
             }).then(tweets3 => {
                 Array.prototype.push.apply(tweetStack, tweets3.data.statuses)
@@ -74,7 +75,7 @@ app.get('/search/:keyword', (request, response) => {
 
                 twitClient.get("search/tweets", {
                     q: keyword,
-                    count: 100,
+                    count: 200,
                     max_id: last_id3
                 }).then(tweets4 => {
                     Array.prototype.push.apply(tweetStack, tweets4.data.statuses)
@@ -82,7 +83,7 @@ app.get('/search/:keyword', (request, response) => {
 
                     twitClient.get("search/tweets", {
                         q: keyword,
-                        count: 100,
+                        count: 200,
                         max_id: last_id4
                     }).then(tweets5 => {
                         Array.prototype.push.apply(tweetStack, tweets5.data.statuses)
@@ -90,7 +91,7 @@ app.get('/search/:keyword', (request, response) => {
 
                         twitClient.get("search/tweets", {
                             q: keyword,
-                            count: 100,
+                            count: 200,
                             max_id: last_id5
                         }).then(tweets6 => {
                             Array.prototype.push.apply(tweetStack, tweets6.data.statuses)
@@ -98,7 +99,7 @@ app.get('/search/:keyword', (request, response) => {
 
                             twitClient.get("search/tweets", {
                                 q: keyword,
-                                count: 100,
+                                count: 200,
                                 max_id: last_id6
                             }).then(tweets7 => {
                                 Array.prototype.push.apply(tweetStack, tweets6.data.statuses)
@@ -106,7 +107,7 @@ app.get('/search/:keyword', (request, response) => {
 
                                 twitClient.get("search/tweets", {
                                     q: keyword,
-                                    count: 100,
+                                    count: 200,
                                     max_id: last_id7
                                 }).then(tweets8 => {
                                     Array.prototype.push.apply(tweetStack, tweets7.data.statuses)
@@ -114,7 +115,7 @@ app.get('/search/:keyword', (request, response) => {
 
                                     twitClient.get("search/tweets", {
                                         q: keyword,
-                                        count: 100,
+                                        count: 200,
                                         max_id: last_id8
                                     }).then(tweets9 => {
                                         Array.prototype.push.apply(tweetStack, tweets9.data.statuses)
@@ -122,7 +123,7 @@ app.get('/search/:keyword', (request, response) => {
 
                                         twitClient.get("search/tweets", {
                                             q: keyword,
-                                            count: 100,
+                                            count: 200,
                                             max_id: last_id9
                                         }).then(tweets10 => {
                                             Array.prototype.push.apply(tweetStack, tweets10.data.statuses)
@@ -195,8 +196,9 @@ app.get('/search/:keyword', (request, response) => {
             })
         })
     })
+})
 
-});
+
 
 
 app.get('/user/:username', (request, response) => {
@@ -209,7 +211,7 @@ app.get('/user/:username', (request, response) => {
 
     twitClient.get("statuses/user_timeline", {
         screen_name: username,
-        count: 100
+        count: 200
     }, function (err, data1, response) {
         console.log(data1)
 
@@ -218,7 +220,7 @@ app.get('/user/:username', (request, response) => {
 
         twitClient.get("statuses/user_timeline", {
             screen_name: username,
-            count: 100,
+            count: 200,
             max_id: last_id
         }, function (err, data2, response) {
             console.log(data2)
@@ -227,7 +229,7 @@ app.get('/user/:username', (request, response) => {
 
             twitClient.get("statuses/user_timeline", {
                 screen_name: username,
-                count: 100,
+                count: 200,
                 max_id: last_id2
             }, function (err, data3, response) {
                 console.log(data3)
@@ -236,7 +238,7 @@ app.get('/user/:username', (request, response) => {
 
                 twitClient.get("statuses/user_timeline", {
                     screen_name: username,
-                    count: 100,
+                    count: 200,
                     max_id: last_id3
                 }, function (err, data4, response) {
                     console.log(data4)
@@ -245,7 +247,7 @@ app.get('/user/:username', (request, response) => {
 
                     twitClient.get("statuses/user_timeline", {
                         screen_name: username,
-                        count: 100,
+                        count: 200,
                         max_id: last_id4
                     }, function (err, data5, response) {
                         console.log(data5)
@@ -254,7 +256,7 @@ app.get('/user/:username', (request, response) => {
 
                         twitClient.get("statuses/user_timeline", {
                             screen_name: username,
-                            count: 100,
+                            count: 200,
                             max_id: last_id5
                         }, function (err, data6, response) {
                             console.log(data6)
@@ -263,7 +265,7 @@ app.get('/user/:username', (request, response) => {
 
                             twitClient.get("statuses/user_timeline", {
                                 screen_name: username,
-                                count: 100,
+                                count: 200,
                                 max_id: last_id6
                             }, function (err, data7, response) {
                                 var last_id7 = data7[data7.length - 1].id_str;
@@ -271,7 +273,7 @@ app.get('/user/:username', (request, response) => {
 
                                 twitClient.get("statuses/user_timeline", {
                                     screen_name: username,
-                                    count: 100,
+                                    count: 200,
                                     max_id: last_id7
                                 }, function (err, data8, response) {
                                     var last_id8 = data8[data8.length - 1].id_str;
@@ -279,7 +281,7 @@ app.get('/user/:username', (request, response) => {
 
                                     twitClient.get("statuses/user_timeline", {
                                         screen_name: username,
-                                        count: 100,
+                                        count: 200,
                                         max_id: last_id8
                                     }, function (err, data9, response) {
                                         var last_id9 = data9[data9.length - 1].id_str;
@@ -287,7 +289,7 @@ app.get('/user/:username', (request, response) => {
 
                                         twitClient.get("statuses/user_timeline", {
                                             screen_name: username,
-                                            count: 100,
+                                            count: 200,
                                             max_id: last_id9
                                         }, function (err, data10, response) {
                                             var last_id10 = data10[data10.length - 1].id_str;
@@ -295,7 +297,7 @@ app.get('/user/:username', (request, response) => {
 
                                             twitClient.get("statuses/user_timeline", {
                                                 screen_name: username,
-                                                count: 100,
+                                                count: 200,
                                                 max_id: last_id10
                                             }, function (err, data11, response) {
                                                 var last_id11 = data11[data11.length - 1].id_str;
@@ -303,7 +305,7 @@ app.get('/user/:username', (request, response) => {
 
                                                 twitClient.get("statuses/user_timeline", {
                                                     screen_name: username,
-                                                    count: 100,
+                                                    count: 200,
                                                     max_id: last_id11
                                                 }, function (err, data12, response) {
                                                     var last_id12 = data12[data12.length - 1].id_str;
@@ -311,7 +313,7 @@ app.get('/user/:username', (request, response) => {
 
                                                     twitClient.get("statuses/user_timeline", {
                                                         screen_name: username,
-                                                        count: 100,
+                                                        count: 200,
                                                         max_id: last_id12
                                                     }, function (err, data13, response) {
                                                         var last_id13 = data13[data13.length - 1].id_str;
@@ -319,7 +321,7 @@ app.get('/user/:username', (request, response) => {
 
                                                         twitClient.get("statuses/user_timeline", {
                                                             screen_name: username,
-                                                            count: 100,
+                                                            count: 200,
                                                             max_id: last_id13
                                                         }, function (err, data14, response) {
                                                             var last_id14 = data14[data14.length - 1].id_str;
@@ -327,7 +329,7 @@ app.get('/user/:username', (request, response) => {
 
                                                             twitClient.get("statuses/user_timeline", {
                                                                 screen_name: username,
-                                                                count: 100,
+                                                                count: 200,
                                                                 max_id: last_id14
                                                             }, function (err, data15, response) {
                                                                 var last_id15 = data15[data15.length - 1].id_str;
@@ -335,7 +337,7 @@ app.get('/user/:username', (request, response) => {
 
                                                                 twitClient.get("statuses/user_timeline", {
                                                                     screen_name: username,
-                                                                    count: 100,
+                                                                    count: 200,
                                                                     max_id: last_id15
                                                                 }, function (err, data16, response) {
                                                                     var last_id16 = data16[data16.length - 1].id_str;
