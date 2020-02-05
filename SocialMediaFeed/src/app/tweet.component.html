@@ -18,7 +18,24 @@
 <div class="subheader">Here's a ranked list of words most used in conjunction with the word "{{word}}" in recent tweets</div>
 
 <mat-card id="displaycard2">
-  <mat-spinner id="loading"></mat-spinner>
+  <form class="keyword">
+    <mat-form-field class="searchinput">
+      <input #keyword matInput placeholder="Keyword" value="{{word}}">
+
+    </mat-form-field>
+    <div class="smalltext">Powered by <img class="logosmall" src="assets/tiw.png"></div>
+
+    <button mat-icon-button id="searchbutton" routerLink="/keywords/{{keyword.value}}">
+   <mat-icon id="search">search</mat-icon>
+   </button>
+  </form>
+
+
+
+  <div id="loadingcontainer">
+    <mat-spinner id="loading"></mat-spinner>
+    <p id="loadingtext">Analyzing 1600 Tweets...</p>
+  </div>
 
   <div id = "container">
 

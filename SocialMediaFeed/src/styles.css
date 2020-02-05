@@ -25,8 +25,6 @@
    
 }
 
-
-
 html{
 background: linear-gradient(180deg, rgba(0,127,255,1) 0%, rgba(0,196,255,1) 100%);
 min-height: 100%;
@@ -36,19 +34,13 @@ font-family: 'helvetica';
 body{
     margin:0px;
 }
-
 .mat-toolbar{
     background-color: white;
     width: 100%;
     -webkit-box-shadow: 0 1px 1px -6px #333;
     -moz-box-shadow: 0 1px 1px -6px #333;
-    box-shadow: 0 1px 1px -6px #333;
-    
-    
-    
+    box-shadow: 0 1px 1px -6px #333;  
 }
-
-
 #userimage{
     border-radius: 50%;
     padding-right: 5px;
@@ -60,21 +52,41 @@ body{
 .mat-form-field-ripple {
     background-color: rgba(0,196,255,1) !important;
 }
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke:rgba(0,127,255,1);
+    }
 #loading{
-   
-    color: rgba(0,196,255,1) !important;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
     margin-top: 110px;
-    margin-left:200px;
-    
+    margin-left:200px;   
 }
+
+#loadingcontainer{
+vertical-align: top;
+display: inline-block;
+text-align: center;
+
+}
+
+#loadingtext {
+    animation: blinker 2s linear infinite;
+     display: block;
+     margin-left:160px;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 .box {
     display: flex;
     align-items:center;
     justify-content: center;
     margin-top: 3%;
+ }
+ #search{
+  margin-top: 35px;
+
  }
 
 #displaycard{
@@ -88,9 +100,9 @@ body{
     width:500px;
     margin-left: auto;
     margin-right: auto;
-   margin-bottom: 150px;
-    max-height: 425px;
-
+    margin-bottom: 150px;
+    max-height: 465px;
+    padding-bottom:25px;
 }
 
 
@@ -125,25 +137,19 @@ margin-right:auto;
 margin-top:2%;
 
 }
-
 #searchbutton{
     float:right;
     margin-top: -17%;
     font-size:35px;
     color: #333;
-
 }
-table.mat-table{
-
-	
-	 -webkit-box-shadow: none;
+table.mat-table{	
+ -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   width: 500px;
     min-width: 500px;
     max-width: 500px;
-
- 
 }
 #container{
     border-radius:5px;
@@ -154,12 +160,8 @@ table.mat-table{
     min-width: 500px;
     max-width: 500px;
     overflow-x:hidden;
-    overflow-y:scroll
+    overflow-y:scroll;
     
-
-   
-    
-
 }
 
 td.mat-cell{
@@ -184,6 +186,9 @@ max-width:25%;
 
 }
 .smalltext{
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
     font-size: 10px;
     text-align: right;
 

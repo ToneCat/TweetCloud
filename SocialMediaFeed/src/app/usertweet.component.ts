@@ -13,8 +13,6 @@ import { CloudData, CloudOptions } from 'angular-tag-cloud-module';
 
 })
 
-
-
 export class UsertweetComponent  {
   word: string;
   dataSource;
@@ -37,14 +35,16 @@ export class UsertweetComponent  {
 
   // this is where the component calls upon the API to get the username
   getUser(word){
+    
    this.tweetService.getUser(word)
       .toPromise()
       .then((response: CloudData[]) => {
-        this.data = response.slice(0, 20);
+        //this.data = response.slice(0, 20);
         this.dataSource = response;
-        const elem = document.getElementById('loading');
+        const elem = document.getElementById('loadingcontainer');
         elem.parentNode.removeChild(elem);
         document.getElementById('container').style.visibility = 'visible';
+        
       })
       .catch((error) => {
         console.error(error);

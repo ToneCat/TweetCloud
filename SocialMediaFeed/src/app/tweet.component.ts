@@ -41,13 +41,11 @@ export class TweetComponent  {
       .toPromise()
       .then((response: CloudData[]) => {
 
-        this.data = response.slice(0, 50);
+       // this.data = response.slice(0, 50);
         this.dataSource = response;
-        const elem = document.getElementById('loading');
+        const elem = document.getElementById('loadingcontainer');
         elem.parentNode.removeChild(elem);
         document.getElementById('container').style.visibility = 'visible';
-        //console.log(this.data);
-
       })
       .catch((error) => {
         console.error(error);
